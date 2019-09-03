@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿
+	    <title>Batman Unlimited | Distress Beacon</title>
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:300,500,600" rel="stylesheet">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    </head>
+    
+    <body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" id="navbar-brand-design" href="./index.html">Batman Unlimited</a>
+				</div>
+
+				<div class="navbar-collapse collapse" id="myNavbar" aria-expanded="false" style="height: 1px;">
+					<ul class="nav navbar-nav">
+						<li><a href="./index.html">HOME</a></li>
+						<li><a href="./deals.html">DEALS</a></li>
+						<li class="active"><a href="./maps.html">DISTRESS BEACON</a></li>
+						<li><a href="./maps-revised.html">BAT-TRACKER</a></li>
+						<li><a href="./about.html">ABOUT</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<h2>The Batman Distress Beacon</h2>
+				<p>Batman is known for using all sorts of gadgets and gizmos to defeat crime. Technology helps him defeat superhuman foes. Batman has a new tool for fighting crime. It’s his new distress beacon. With the Batman Distress Beacon, you can alert Batman to a crime. If he is nearby, he will quickly help you. If he can’t make it at the moment, he will quickly send someone to aid you. This is what his Distress Beacon looks like. Give it a try.</p>
+				<h3>NOTICE: This is only an example of Batman’s Distress Beacon. It WILL NOT call Batman or local authorities. To find Batman’s Distress Beacon, go to Batman’s official site and download the official app from there. </h3>
+
+				<p>Click the button to send your beacon.</p>
+				<input id="find-me" type="submit" value="Try It">
+
+				<p id = "status"></p>
+				<p id="demo"></p>
+				<a id = "map-link" target="_blank"></a>
+			</div>
+			<div class="row"></div>
+		</div>
+
+		<div class="jumbotron text-center" id="footer" style="margin-bottom:0">
+			<h4>Copyright &copy; 2019 by Jonathan Chapman</h4>
+		</div>
+
+		
+
+		<script>
+			function geoFindMe() {
+
+			  const status = document.querySelector('#status');
+
+			  var x = document.getElementById("demo");
+
+			  function success(position) {
+			    const latitude  = position.coords.latitude;
+			    const longitude = position.coords.longitude;
+
+
+			    x.innerHTML = "<textarea readonly>Hi. This is Oracle. We have received your distress call. We noticed that your coordinates are: &#13;&#10;&emsp;Latitude: " + latitude + "&#13;&#10;&emsp;Longitude: " + longitude + "&#13;&#10;Hang in there. Help is on the way!</textarea>";
+
+			    status.textContent = '';
+			  }
+
+			  function error() {
+			    status.textContent = 'Unable to retrieve your location';
+			  }
+
+			  if (!navigator.geolocation) {
+			    status.textContent = 'Geolocation is not supported by your browser';
+			  } else {
+			    status.textContent = 'Locating…';
+			    navigator.geolocation.getCurrentPosition(success, error);
+			  }
+
+			}
+
+			document.querySelector('#find-me').addEventListener('click', geoFindMe);
+		</script>
+	</body>
+</html>

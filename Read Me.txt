@@ -1,0 +1,19 @@
+BATMAN UNLIMITED
+
+In this app, I used the iTunes Search API. The app is a website. On the "Home" page, the API is used to automatically load several searches to display iTunes "deals" on Batman products sold by iTunes. Under the "Deals" page, I added a search feature to enable the user to search through the iTunes API for music, books, and movies. It will display the first 50 results. This page was intended to only display search results relating to Batman, but I didn't have enough time to implement a more refined search query. However, the query works well for regular searches.
+
+To open the website, double-click the "Batman-Unlimited-for-Windows.bat" file if you are in Windows. If you are on a Mac, open "Batman-Unlimited" folder and double-click the "index.html" file.
+
+To navigate through the pages of the website, click through the tabs in the navigation bar on the top.
+
+To use the iTunes search query that I made:
+	1. Navigate to the "Deals" page.
+	2. Use the dropdown menu to select the type of media you wish to search.
+	3. In the input box, type in the word or phrase you want to search.
+	4. Hit the "Enter" key or press the "Submit" button
+
+If you wish to look at any of the searched items on iTunes, simply click the item to go to its corresponding iTunes link.
+
+Thank you for using Batman Unlimited!
+
+~ Jonathan Chapman, developer

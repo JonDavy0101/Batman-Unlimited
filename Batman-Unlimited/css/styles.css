@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    background-color: black;
+}
+
+p, a, h1, h2, h3, h4, h5, h6, label {
+	color: #fff500;
+}
+
+.title-bar {
+	background-color: black;
+}
+
+.navbar-toggle {
+	background-color: #08415C;
+	border: 0;
+}
+
+.navbar {
+	border: 0;
+}
+
+.container-fluid {
+	background-color: #fff500;
+}
+
+.music-image {
+	float: left;
+	margin: 0 10px 10px 0;
+	border: 3px solid #fff500;
+}
+
+.media-row {
+	margin: 20px 0;
+}
+
+.main-image {
+	width: 200px;
+	margin: 0 15px 15px 0;
+	float: left;
+}
+
+
+#navbar-brand-design {
+	color: #000000;
+}
+
+#navbar-brand-design:hover {
+	color: #7a7d7d;
+}
+
+#myNavbar a {
+	color: #000000;
+}
+
+#myNavbar a:hover {
+	color: #7a7d7d;
+}
+
+#myNavbar .active a {
+	color: #fff500;
+}
+
+#myNavbar .active a:hover {
+	color: #7a7d7d;
+}
+
+.image-div {
+	height: 200px;
+}
+
+.photo-design {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.title-image {
+	width: 350px;
+}
+
+.result {
+	height: 150px;
+}
+
+#footer {
+	margin-top: 75px;
+	background-color: #fff500;
+}
+
+#footer h4 {
+	color: black;
+}
+
+label {
+	margin: 0;
+}
+
+input[type=text],input[type=search], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: #fffbfe;
+}
+
+input[type=submit] {
+	width: 100%;
+	background-color: #7a7d7d;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+ 	background-color: #fff500;
+ 	color: black;
+}
+
+textarea {
+	width: 100%;
+	height: 150px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: #fffbfe;
+	color: black;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	body {
+		background-color: lightblue;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	body {
+		background-color: lightblue;
+ 	}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	body {
+    background-color: lightblue;
+  }
+} 
+
+@media print { 
+ /* All your print styles go here */
+ #header, #footer, #nav {
+ 	display: none !important;
+ } 
+}

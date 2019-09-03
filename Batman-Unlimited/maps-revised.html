@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿
+	    <title>Batman Unlimited | Bat-Tracker</title>
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:300,500,600" rel="stylesheet">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    </head>
+    
+    <body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>                        
+					</button>
+					<a class="navbar-brand" id="navbar-brand-design" href="./index.html">Batman Unlimited</a>
+				</div>
+
+				<div class="navbar-collapse collapse" id="myNavbar" aria-expanded="false" style="height: 1px;">
+					<ul class="nav navbar-nav">
+						<li><a href="./index.html">HOME</a></li>
+						<li><a href="./deals.html">DEALS</a></li>
+						<li><a href="./maps.html">DISTRESS BEACON</a></li>
+						<li class="active"><a href="./maps-revised.html">BAT-TRACKER</a></li>
+						<li><a href="./about.html">ABOUT</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<h2>The Batman Tracker</h2>
+				<p>In order to track criminals, Batman occasionally hacks into computers and cell phones. Check out an example here.</p>
+
+				<input id="find-me" type="submit" value="Try It">
+
+				<p id = "status"></p>
+				<p id="demo"></p>
+				<a id = "map-link" target="_blank"></a>
+			</div>
+			<div class="row"></div>
+		</div>
+
+		<div class="jumbotron text-center" id="footer" style="margin-bottom:0">
+			<h4>Copyright &copy; 2019 by Jonathan Chapman</h4>
+		</div>
+
+		
+
+		<script>
+			function geoFindMe() {
+
+			  const status = document.querySelector('#status');
+			  const mapLink = document.querySelector('#map-link');
+			  var x = document.getElementById("demo");
+
+			  mapLink.href = '';
+  			  mapLink.textContent = '';
+
+			  function success(position) {
+			    const latitude  = position.coords.latitude;
+			    const longitude = position.coords.longitude;
+			    const altitude = position.coords.altitude;
+			    const heading = position.coords.heading;
+			    const speed = position.coords.speed;
+
+			    status.textContent = '';
+
+			    x.innerHTML = "<textarea readonly>Locating............................. &#13;&#10;&emsp;Latitude: " + latitude + "&#13;&#10;&emsp;Longitude: " + longitude + "&#13;&#10;&emsp;Altitude: " + altitude + "&#13;&#10;&emsp;Heading: " + heading + "&#13;&#10;&emsp;Speed: " + speed + "</textarea><p>Click the coordinates below for a map view: </p>";
+
+			    mapLink.href = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+			    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+
+			    status.textContent = '';
+			  }
+
+			  function error() {
+			    status.textContent = 'Unable to retrieve your location';
+			  }
+
+			  if (!navigator.geolocation) {
+			    status.textContent = 'Geolocation is not supported by your browser';
+			  } else {
+			    status.textContent = 'Locating…';
+			    navigator.geolocation.getCurrentPosition(success, error);
+			  }
+
+			}
+
+			document.querySelector('#find-me').addEventListener('click', geoFindMe);
+		</script>
+	</body>
+</html>
